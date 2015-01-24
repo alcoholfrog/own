@@ -1,0 +1,59 @@
+﻿@model Homework2015_01_25.Models.Board
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <title>Thanks</title>
+    <style>
+        .btn a { color: white; text-decoration: none; }
+        body { background-color: #f1f1f1;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        @if (Model.Type == "추천")
+        {
+            <h3> @Model.get_num_of_recom() 번째 추천 의견 감사합니다 @Model.Name 님 </h3>
+        }
+        else if (Model.Type == "비추천")
+        {
+            <h3> @Model.get_num_of_not_recom() 번째 비추천 의견 감사합니다 @Model.Name 님 </h3>
+        }
+         
+        <div class="lead">
+            <div class="panel-group">
+                <label>이름 : </label>
+                @Model.Name
+            </div>
+            <div class="panel-group">
+                <label>날짜 : </label>
+                @Model.Date_time
+            </div>
+            <div class="panel-group">
+                <label>제목 : </label>
+                @Model.Title
+            </div>
+            <div class="panel-group">
+                <label>본문 : </label>
+                @Model.Text
+            </div>
+            <div class="panel-group">
+                <label>이유 : </label>
+                @Model.Reason
+            </div>
+            <div class="btn btn-success">
+                @Html.ActionLink("처음으로", "Index")
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
