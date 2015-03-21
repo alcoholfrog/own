@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "InterviewList";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>InterviewList</title>
+    </head>
+    <body>
+        <div>
+            @Html.ActionLink("첫번째 인터뷰", "Interview1")
+            <br />
+            @Html.ActionLink("두번째 인터뷰", "Interview2")
+            <br />
+            @Html.ActionLink("세번째 인터뷰", "Detail3")
+            <br />
+            @Html.ActionLink("네번째 인터뷰", "Interview4", "Malfunction")
+        </div>
+    </body>
+</html>
